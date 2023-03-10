@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Calculator</string>
+    <string name="spinner">ResourceType</string>
+    <string-array name="number_systems">
+        <item>Binary</item>
+        <item>Decimal</item>
+        <item>Octal</item>
+        <item>Hexadecimal</item>
+    </string-array>
+</resources>

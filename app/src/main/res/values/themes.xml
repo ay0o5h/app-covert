@@ -1,0 +1,27 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Theme.Calculator" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
+        <item name="colorPrimary">@color/green</item>
+        <item name="colorOnError">@color/red</item>
+        <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
+    </style>
+    <style name="CustomButtonStyle" parent="Widget.AppCompat.Button">
+        <item name="android:layout_width">@dimen/normalWidth</item>
+        <item name="android:layout_height">@dimen/normalHeight</item>
+        <item name="android:background">@drawable/button_background</item>
+        <item name="android:textColor">@color/light_grean</item>
+        <item name="android:textSize">@dimen/largeTitle</item>
+
+<!--        <item name="android:layout_margin">16dp</item>-->
+
+    </style>
+
+    <style name="GreenSpinnerItem" parent="android:Widget.DropDownItem">
+        <item name="android:background">@android:color/transparent</item>
+        <item name="android:textColor">@color/light_grean</item>
+        <item name="android:textSize">@dimen/mediumTitle</item>
+        <item name="android:padding">@dimen/smallPadding</item>
+    </style>
+
+
+</resources>

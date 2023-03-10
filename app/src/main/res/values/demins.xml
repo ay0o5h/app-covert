@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--font Size-->
+    <dimen name="largeTitle">24dp</dimen>
+    <dimen name="mediumTitle">16dp</dimen>
+    <dimen name="smallTitle">8dp</dimen>
+    <!--  margin  -->
+    <dimen name="largeMargin">16dp</dimen>
+    <dimen name="normalMargin">12dp</dimen>
+    <dimen name="mediumMargin">11dp</dimen>
+    <dimen name="smallMargin">8dp</dimen>
+    <dimen name="tinyMargin">4dp</dimen>
+    <!--  padding  -->
+    <dimen name="largePadding">16dp</dimen>
+    <dimen name="normalPadding">12dp</dimen>
+    <dimen name="smallPadding">8dp</dimen>
+    <dimen name="tinyPadding">4dp</dimen>
+    <!--height width button-->
+    <dimen name="normalHeight">64dp</dimen>
+    <dimen name="normalWidth">64dp</dimen>
+    <dimen name="mediumHeight">32dp</dimen>
+    <dimen name="smallHeight">24dp</dimen>
+    <dimen name="smallWidth">24dp</dimen>
+
+
+
+</resources>
