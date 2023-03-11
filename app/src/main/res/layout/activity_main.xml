@@ -12,14 +12,14 @@
     <TextView
         android:id="@+id/number"
         android:layout_width="wrap_content"
+        app:layout_constraintHorizontal_weight="1"
         android:layout_height="wrap_content"
         android:layout_margin="16dp"
         android:background="@drawable/input_background"
         android:gravity="end"
         android:hint="0"
-        android:maxLength="8"
-        android:textSize="@dimen/largeTitle"
         android:padding="@dimen/largePadding"
+        android:textSize="@dimen/largeTitle"
         app:layout_constraintEnd_toEndOf="@id/clear"
         app:layout_constraintHorizontal_bias="0.759"
         app:layout_constraintStart_toStartOf="parent"
@@ -39,7 +39,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Spinner
-        android:id="@+id/from_spinner"
+        android:id="@+id/to_spinner"
         android:layout_width="wrap_content"
         android:layout_height="@dimen/mediumHeight"
         android:layout_margin="@dimen/largeMargin"
@@ -53,8 +53,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/imageView"
-        tools:layout_editor_absoluteY="112dp"
-        tools:ignore="MissingConstraints" />
+        app:layout_constraintTop_toBottomOf="@+id/clear" />
 
     <ImageView
         android:id="@+id/imageView"
@@ -65,11 +64,10 @@
         app:layout_constraintEnd_toStartOf="@+id/from_spinner"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/to_spinner"
-        tools:layout_editor_absoluteY="112dp"
-        tools:ignore="MissingConstraints" />
+        app:layout_constraintTop_toBottomOf="@+id/number" />
 
     <Spinner
-        android:id="@+id/to_spinner"
+        android:id="@+id/from_spinner"
         android:layout_width="wrap_content"
         android:layout_height="@dimen/mediumHeight"
         android:layout_margin="@dimen/largeMargin"
@@ -83,8 +81,8 @@
         app:layout_constraintEnd_toStartOf="@+id/imageView"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="112dp"
-        tools:ignore="MissingConstraints" />
+        app:layout_constraintTop_toBottomOf="@+id/number"
+        />
 
 
     <Button
@@ -96,29 +94,30 @@
         app:layout_constraintEnd_toStartOf="@+id/btn_8"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="168dp"
-        tools:ignore="MissingConstraints" />
+        app:layout_constraintTop_toBottomOf="@+id/from_spinner"
+        tools:layout_editor_absoluteY="168dp" />
 
     <Button
         android:id="@+id/btn_8"
         style="@style/CustomButtonStyle"
         android:layout_margin="@dimen/smallMargin"
-        tools:ignore="MissingConstraints"
+        android:layout_marginTop="32dp"
         android:onClick="onClickNumber"
         android:text="8"
         app:layout_constraintEnd_toStartOf="@+id/btn_9"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/btn_7"
+        app:layout_constraintTop_toBottomOf="@+id/from_spinner"
         tools:layout_editor_absoluteY="168dp" />
 
     <Button
         android:id="@+id/btn_9"
         style="@style/CustomButtonStyle"
         android:layout_margin="@dimen/smallMargin"
-        tools:ignore="MissingConstraints"
-        android:onClick="onClickNumber"
 
+        android:onClick="onClickNumber"
         android:text="9"
+        app:layout_constraintTop_toBottomOf="@+id/to_spinner"
         app:layout_constraintEnd_toStartOf="@+id/btn_0"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/btn_8"
@@ -128,9 +127,10 @@
         android:id="@+id/btn_0"
         style="@style/CustomButtonStyle"
         android:layout_margin="@dimen/smallMargin"
-        tools:ignore="MissingConstraints"
         android:onClick="onClickNumber"
         android:text="0"
+        app:layout_constraintTop_toBottomOf="@+id/to_spinner"
+
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/btn_9"
@@ -141,9 +141,10 @@
         android:id="@+id/btn_4"
         style="@style/CustomButtonStyle"
         android:layout_margin="@dimen/smallMargin"
-        tools:ignore="MissingConstraints"
+
         android:onClick="onClickNumber"
         android:text="4"
+        app:layout_constraintTop_toBottomOf="@+id/btn_7"
         app:layout_constraintEnd_toStartOf="@+id/btn_5"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
@@ -153,9 +154,10 @@
         android:id="@+id/btn_5"
         style="@style/CustomButtonStyle"
         android:layout_margin="@dimen/smallMargin"
-        tools:ignore="MissingConstraints"
+
         android:onClick="onClickNumber"
         android:text="5"
+        app:layout_constraintTop_toBottomOf="@+id/btn_8"
         app:layout_constraintEnd_toStartOf="@+id/btn_6"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/btn_4"
@@ -165,9 +167,10 @@
         android:id="@+id/btn_6"
         style="@style/CustomButtonStyle"
         android:layout_margin="@dimen/smallMargin"
-        tools:ignore="MissingConstraints"
+
         android:onClick="onClickNumber"
         android:text="6"
+        app:layout_constraintTop_toBottomOf="@+id/btn_9"
         app:layout_constraintEnd_toStartOf="@+id/btn_f"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/btn_5"
@@ -177,9 +180,9 @@
         android:id="@+id/btn_f"
         style="@style/CustomButtonStyle"
         android:layout_margin="@dimen/smallMargin"
-        tools:ignore="MissingConstraints"
         android:onClick="onClickNumber"
         android:text="F"
+        app:layout_constraintTop_toBottomOf="@+id/btn_0"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/btn_6"
@@ -190,9 +193,10 @@
         android:id="@+id/btn_1"
         style="@style/CustomButtonStyle"
         android:layout_margin="@dimen/smallMargin"
-        tools:ignore="MissingConstraints"
+
         android:onClick="onClickNumber"
         android:text="1"
+        app:layout_constraintTop_toBottomOf="@+id/btn_4"
         app:layout_constraintEnd_toStartOf="@+id/btn_2"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
@@ -202,9 +206,10 @@
         android:id="@+id/btn_2"
         style="@style/CustomButtonStyle"
         android:layout_margin="@dimen/smallMargin"
-        tools:ignore="MissingConstraints"
+
         android:onClick="onClickNumber"
         android:text="2"
+        app:layout_constraintTop_toBottomOf="@+id/btn_5"
         app:layout_constraintEnd_toStartOf="@+id/btn_3"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/btn_1"
@@ -214,9 +219,10 @@
         android:id="@+id/btn_3"
         style="@style/CustomButtonStyle"
         android:layout_margin="@dimen/smallMargin"
-        tools:ignore="MissingConstraints"
+
         android:onClick="onClickNumber"
         android:text="3"
+        app:layout_constraintTop_toBottomOf="@+id/btn_6"
         app:layout_constraintEnd_toStartOf="@+id/btn_e"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/btn_2"
@@ -226,9 +232,9 @@
         android:id="@+id/btn_e"
         style="@style/CustomButtonStyle"
         android:layout_margin="@dimen/smallMargin"
-        tools:ignore="MissingConstraints"
         android:onClick="onClickNumber"
         android:text="E"
+        app:layout_constraintTop_toBottomOf="@+id/btn_f"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/btn_3"
@@ -239,9 +245,10 @@
         android:id="@+id/btn_a"
         style="@style/CustomButtonStyle"
         android:layout_margin="@dimen/smallMargin"
-        tools:ignore="MissingConstraints"
+
         android:onClick="onClickNumber"
         android:text="A"
+        app:layout_constraintTop_toBottomOf="@+id/btn_1"
         app:layout_constraintEnd_toStartOf="@+id/btn_b"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
@@ -251,9 +258,10 @@
         android:id="@+id/btn_b"
         style="@style/CustomButtonStyle"
         android:layout_margin="@dimen/smallMargin"
-        tools:ignore="MissingConstraints"
+
         android:onClick="onClickNumber"
         android:text="B"
+        app:layout_constraintTop_toBottomOf="@+id/btn_2"
         app:layout_constraintEnd_toStartOf="@+id/btn_c"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/btn_a"
@@ -263,9 +271,10 @@
         android:id="@+id/btn_c"
         style="@style/CustomButtonStyle"
         android:layout_margin="@dimen/smallMargin"
-        tools:ignore="MissingConstraints"
+
         android:onClick="onClickNumber"
         android:text="C"
+        app:layout_constraintTop_toBottomOf="@+id/btn_3"
         app:layout_constraintEnd_toStartOf="@+id/btn_d"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/btn_b"
@@ -275,9 +284,10 @@
         android:id="@+id/btn_d"
         style="@style/CustomButtonStyle"
         android:layout_margin="@dimen/smallMargin"
-        tools:ignore="MissingConstraints"
+
         android:onClick="onClickNumber"
         android:text="D"
+        app:layout_constraintTop_toBottomOf="@+id/btn_e"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/btn_c"
@@ -291,6 +301,7 @@
         android:layout_height="@dimen/normalHeight"
         android:layout_margin="@dimen/largeMargin"
         android:text="Covert"
+        app:layout_constraintTop_toBottomOf="@+id/btn_b"
         android:textColor="@color/white"
         tools:layout_editor_absoluteX="80dp"
         tools:layout_editor_absoluteY="489dp" />

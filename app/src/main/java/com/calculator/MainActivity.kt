@@ -1,15 +1,12 @@
 package com.calculator
 
-import android.annotation.SuppressLint
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import android.view.View
 import android.widget.AdapterView
 import android.widget.Button
 import android.widget.Spinner
 import android.widget.TextView
-import android.widget.Toast
 
 class MainActivity : AppCompatActivity() {
     lateinit var textNumber:TextView
@@ -69,25 +66,54 @@ class MainActivity : AppCompatActivity() {
         }
         resultBtn.setOnClickListener {
             val input = textNumber.text.toString()
-            val result=convertNumber(textNumber.text.toString())
-            print(result)
-            val type = when (selectedToType) {
-                "Binary" -> Integer.toBinaryString(input.toInt())
-               "Octal" -> Integer.toOctalString(input.toInt())
-                "Decimal" -> Integer.toHexString(input.toInt())
-                "Hexadecimal" -> Integer.toHexString(input.toInt())
-                else -> 10
-            }
+            var result =""
+            var type="$selectedFrom to $selectedToType"
 
-
-            val output = try {
-                Integer.parseInt("7", 2)
-            } catch (e: NumberFormatException) {
-                textNumber.text=e.toString()
-                print(e)
-                null
+            when (type) {
+                "Decimal to Binary" -> {
+                    val decimal = input.toInt()
+                    result = ConvertNumber.decimalToBinary(decimal)
+                }
+                "Decimal to Octal" -> {
+                    val decimal = input.toInt()
+                    result = ConvertNumber.decimalToOctal(decimal)
+                }
+                "Decimal to Hexadecimal" -> {
+                    val decimal = input.toInt()
+                    result = ConvertNumber.decimalToHexadecimal(decimal)
+                }
+                "Binary to Decimal" -> {
+                    val decimal = ConvertNumber.binaryToDecimal(input)
+                    result = decimal.toString()
+                }
+                "Binary to Octal" -> {
+                    result = ConvertNumber.binaryToOctal(input)
+                }
+                "Binary to Hexadecimal" -> {
+                    result = ConvertNumber.binaryToHexadecimal(input)
+                }
+                "Octal to Binary" -> {
+                    result = ConvertNumber.octalToBinary(input)
+                }
+                "Octal to Decimal" -> {
+                    val decimal = ConvertNumber.octalToDecimal(input)
+                    result = decimal.toString()
+                }
+                "Octal to Hexadecimal" -> {
+                    result = ConvertNumber.octalToHexadecimal(input)
+                }
+                "Hexadecimal to Binary" -> {
+                    result = ConvertNumber.hexadecimalToBinary(input)
+                }
+                "Hexadecimal to Octal" -> {
+                    result = ConvertNumber.hexadecimalToOctal(input)
+                }
+                "Hexadecimal to Decimal" -> {
+                    val decimal = ConvertNumber.hexadecimalToDecimal(input)
+                    result = decimal.toString()
+                }
             }
-        textNumber.text= type.toString()
+        textNumber.text= result
         }
     }
     fun clearInput(){
@@ -98,8 +124,6 @@ class MainActivity : AppCompatActivity() {
         val oldDigit=textNumber.text.toString()
         val newTextNumber=oldDigit+newDigit
         textNumber.text=newTextNumber
-
-
     }
 }
 
